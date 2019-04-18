@@ -1,0 +1,9 @@
+{
+  "realm": "test-realm",
+  "auth-server-url": "http://localhost:8080/auth",
+  "ssl-required": "external",
+  "resource": "test-client",
+  "credentials": {
+    "secret": "afbd20a1-61c9-4039-afac-080307e5a8b1"
+  }
+}
