@@ -21,15 +21,6 @@ public class MainController {
     private final static Logger logger = LoggerFactory.getLogger(MainController.class);
     @GetMapping("/test")
     public String index(HttpServletRequest req) {
-        Map<String, String> headers = Collections.list(req.getHeaderNames())
-                .stream()
-                .collect(Collectors.toMap(
-                        headerName -> headerName,
-                        headerName -> req.getHeader((String) headerName)
-                        )
-                );
-        logger.info("headers: {}", headers.entrySet().stream().map(e -> e.getKey() + "=" + e.getValue()).collect(Collectors.joining("\n")));
-
         KeycloakSecurityContext securityContext = (KeycloakSecurityContext) req.getAttribute(KeycloakSecurityContext.class.getName());
         logger.info("KeycloakSecurityContext: {}", securityContext);
         return "index";
